@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Mon application Android</string>
+    <string name="joke_details_screen_title">Écran des détails de la blague</string>
+    <string name="tab_all_jokes">Toutes les blagues</string>
+    <string name="tab_favorites">Favoris</string>
+    <string name="jokes_list_title">Liste des blagues - Android</string>
+    <string name="theme_label_dark">Sombre</string>
+    <string name="theme_lable_light">Clair</string> <!-- Note: typo in 'lable' kept as is -->
+    <string name="theme_label_default">Par défaut (Suivre le système)</string>
+    <string name="preference_theme">Thème</string>
+    <string name="preference_language">Langue</string>
+    <string name="preferences_title">Préférences</string>
+</resources>

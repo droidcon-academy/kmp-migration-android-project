@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Android App</string>
+    <string name="joke_details_screen_title">Joke Details Screen</string>
+    <string name="tab_all_jokes">Όλα τα Jokes</string>
+    <string name="tab_favorites">Αγαπημένα</string>
+    <string name="jokes_list_title">Λίστα από Jokes - Android</string>
+    <string name="theme_label_dark">Σκοτεινό</string>
+    <string name="theme_lable_light">Φωτεινό</string>
+    <string name="theme_label_default">Αρχικό (Βάσει συστήματος)</string>
+    <string name="preference_theme">Θέμα</string>
+    <string name="preference_language">Γλώσσα</string>
+    <string name="preferences_title">Ρυθμίσεις</string>
+</resources>

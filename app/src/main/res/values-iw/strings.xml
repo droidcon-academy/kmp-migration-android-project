@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">האפליקציה שלי לאנדרואיד</string>
+    <string name="joke_details_screen_title">מסך פרטי הבדיחה</string>
+    <string name="tab_all_jokes">כל הבדיחות</string>
+    <string name="tab_favorites">מועדפים</string>
+    <string name="jokes_list_title">רשימת בדיחות - Android </string>
+    <string name="theme_label_dark">כהה</string>
+    <string name="theme_lable_light">בהיר</string>
+    <string name="theme_label_default">ברירת מחדל (לפי המערכת)</string>
+    <string name="preference_theme">ערכת נושא</string>
+    <string name="preference_language">שפה</string>
+    <string name="preferences_title">הגדרות</string>
+</resources>

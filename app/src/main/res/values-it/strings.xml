@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">La mia app Android</string>
+    <string name="joke_details_screen_title">Schermata dei dettagli della battuta</string>
+    <string name="tab_all_jokes">Tutte le battute</string>
+    <string name="tab_favorites">Preferiti</string>
+    <string name="jokes_list_title">Elenco delle battute - Android</string>
+    <string name="theme_label_dark">Scuro</string>
+    <string name="theme_lable_light">Chiaro</string> <!-- Nota: errore di battitura mantenuto -->
+    <string name="theme_label_default">Predefinito (Segui il sistema)</string>
+    <string name="preference_theme">Tema</string>
+    <string name="preference_language">Lingua</string>
+    <string name="preferences_title">Preferenze</string>
+</resources>
