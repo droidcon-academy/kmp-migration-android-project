@@ -9,6 +9,8 @@ import com.droidcon.simplejokes.jokes.domain.JokesRepository
 import com.droidcon.simplejokes.jokes.domain.model.Joke
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import kotlin.time.Clock
+import kotlin.time.ExperimentalTime
 
 /**
  * Repository implementation for jokes data with offline-first approach.
@@ -29,9 +31,10 @@ class JokesRepositoryImpl(
     /**
      * Fetches jokes from the network API and updates the database.
      */
+    @OptIn(ExperimentalTime::class)
     override suspend fun fetchJokesFromApi(): Result<Unit> {
         return runCatching {
-            val startTime = System.currentTimeMillis()
+            val startTime = Clock.System.now()
 
             // Get favorite jokes IDs to preserve them
             val favoriteJokesIds = database.getFavoriteJokesIds()
@@ -53,7 +56,7 @@ class JokesRepositoryImpl(
             // Upsert new jokes
             database.upsertJokes(jokesToUpsert)
 
-            val endTime = System.currentTimeMillis()
+            val endTime = Clock.System.now()
             val elapsedTime = endTime - startTime
 
             Logger.withTag("JokesRepository").d("Successfully updated database with ${remoteJokes.size} jokes in $elapsedTime ms")
