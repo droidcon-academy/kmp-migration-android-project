@@ -4,7 +4,6 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 
     alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt)
     alias(libs.plugins.jetbrains.kotlin.serialization)
 }
 
@@ -57,11 +56,8 @@ dependencies {
     // Timber
     implementation(libs.timber)
 
-    // Hilt
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-    implementation(libs.androidx.hilt.navigation.compose)
-    implementation(libs.androidx.hilt.navigation.fragment)
+    // koin
+    implementation(libs.bundles.koin)
 
     // Navigation
     implementation(libs.navigation.compose)

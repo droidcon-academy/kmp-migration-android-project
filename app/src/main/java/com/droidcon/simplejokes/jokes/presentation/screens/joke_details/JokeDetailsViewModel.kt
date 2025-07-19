@@ -6,8 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.droidcon.simplejokes.jokes.domain.JokesRepository
 import com.droidcon.simplejokes.jokes.domain.model.Joke
-import dagger.hilt.android.lifecycle.HiltViewModel
-import jakarta.inject.Inject
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -29,8 +27,7 @@ sealed interface JokesDetailsEvent {
     data object GoBack: JokesDetailsEvent
 }
 
-@HiltViewModel
-class JokesDetailsViewModel @Inject constructor(
+class JokesDetailsViewModel(
     private val repository: JokesRepository,
     private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {

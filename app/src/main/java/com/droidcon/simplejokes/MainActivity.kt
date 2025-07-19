@@ -19,37 +19,18 @@ import com.droidcon.simplejokes.core.presentation.Localization
 import com.droidcon.simplejokes.core.presentation.SetSystemBarAppearance
 import com.droidcon.simplejokes.core.presentation.SnackbarManager
 import com.droidcon.simplejokes.core.presentation.ui.theme.SimpleJokesTheme
-import dagger.hilt.android.AndroidEntryPoint
-import jakarta.inject.Inject
 import kotlinx.coroutines.flow.distinctUntilChanged
+import org.koin.compose.koinInject
 
-@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-
-    @Inject
-    lateinit var preferencesDataSource: PreferencesDataSource
-
-    @Inject
-    lateinit var localization: Localization
-
-    @Inject
-    lateinit var snackbarManager: SnackbarManager
-
-
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
         setContent {
-            JokesThemeManager(
-                preferencesDataSource = preferencesDataSource,
-            ) {
-                AppEffectHost(
-                    localization = localization,
-                    preferencesDataSource = preferencesDataSource,
-                    snackbarManager = snackbarManager
-                ) { snackbarHostState ->
+            JokesThemeManager {
+                AppEffectHost{ snackbarHostState ->
                     Scaffold(
                         snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
                     ) {
@@ -62,7 +43,8 @@ class MainActivity : AppCompatActivity() {
 }
 
 @Composable
-private fun JokesThemeManager(preferencesDataSource: PreferencesDataSource, content: @Composable () -> Unit) {
+private fun JokesThemeManager(content: @Composable () -> Unit) {
+    val preferencesDataSource = koinInject<PreferencesDataSource>()
     val themePreference by preferencesDataSource.getTheme().collectAsStateWithLifecycle("")
     val systemIsDark = isSystemInDarkTheme()
 
@@ -82,11 +64,11 @@ private fun JokesThemeManager(preferencesDataSource: PreferencesDataSource, cont
 
 @Composable
 private fun AppEffectHost(
-    localization: Localization,
-    preferencesDataSource: PreferencesDataSource,
-    snackbarManager: SnackbarManager,
     content: @Composable (snackbarHostState: SnackbarHostState) -> Unit
 ) {
+    val localization = koinInject<Localization>()
+    val preferencesDataSource = koinInject<PreferencesDataSource>()
+    val snackbarManager = koinInject<SnackbarManager>()
     val snackbarHostState = remember { SnackbarHostState() }
 
     // Effect for handling language changes

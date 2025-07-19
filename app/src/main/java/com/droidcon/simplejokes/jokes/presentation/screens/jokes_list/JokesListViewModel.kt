@@ -6,8 +6,6 @@ import androidx.lifecycle.viewModelScope
 import com.droidcon.simplejokes.core.presentation.SnackbarManager
 import com.droidcon.simplejokes.jokes.domain.JokesRepository
 import com.droidcon.simplejokes.jokes.domain.model.Joke
-import dagger.hilt.android.lifecycle.HiltViewModel
-import jakarta.inject.Inject
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -37,8 +35,7 @@ sealed interface JokesListEvent {
 /**
  * ViewModel for the jokes list screen with manual database observation and network loading.
  */
-@HiltViewModel
-class JokesListViewModel @Inject constructor(
+class JokesListViewModel(
     private val repository: JokesRepository,
     private val snackbarManager: SnackbarManager
     ): ViewModel() {

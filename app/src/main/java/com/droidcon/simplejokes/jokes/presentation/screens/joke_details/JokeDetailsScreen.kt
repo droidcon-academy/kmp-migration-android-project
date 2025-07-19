@@ -30,15 +30,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.droidcon.simplejokes.R
+import org.koin.androidx.compose.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun JokeDetailsScreenRoot(
     modifier: Modifier = Modifier,
-    viewModel: JokesDetailsViewModel = hiltViewModel(),
+    viewModel: JokesDetailsViewModel = koinViewModel(),
     onGoBack: () -> Unit,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()

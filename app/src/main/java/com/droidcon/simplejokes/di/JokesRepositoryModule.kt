@@ -2,17 +2,11 @@ package com.droidcon.simplejokes.di
 
 import com.droidcon.simplejokes.jokes.data.JokesRepositoryImpl
 import com.droidcon.simplejokes.jokes.domain.JokesRepository
-import dagger.Binds
-import dagger.Module
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import org.koin.core.module.dsl.singleOf
+import org.koin.dsl.bind
+import org.koin.dsl.module
 
-@Module
-@InstallIn(SingletonComponent::class)
-abstract class JokesRepositoryModule {
 
-    @Binds
-    abstract fun bindJokesRepository(
-        jokesRepositoryImpl: JokesRepositoryImpl
-    ): JokesRepository
+val jokesRepositoryModule = module {
+    singleOf(::JokesRepositoryImpl).bind<JokesRepository>()
 }

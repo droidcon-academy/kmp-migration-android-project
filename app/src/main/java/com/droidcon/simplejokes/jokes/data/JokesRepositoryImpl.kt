@@ -6,7 +6,6 @@ import com.droidcon.simplejokes.jokes.data.mappers.toJoke
 import com.droidcon.simplejokes.jokes.data.network.JokesApiService
 import com.droidcon.simplejokes.jokes.domain.JokesRepository
 import com.droidcon.simplejokes.jokes.domain.model.Joke
-import jakarta.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import timber.log.Timber
@@ -14,7 +13,7 @@ import timber.log.Timber
 /**
  * Repository implementation for jokes data with offline-first approach.
  */
-class JokesRepositoryImpl @Inject constructor(
+class JokesRepositoryImpl(
     private val apiService: JokesApiService,
     private val database: JokesDao
 ) : JokesRepository {

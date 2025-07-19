@@ -6,11 +6,10 @@ import com.droidcon.simplejokes.core.domain.Languages
 import com.droidcon.simplejokes.core.domain.datasource.AppLanguage
 import com.droidcon.simplejokes.core.domain.datasource.AppTheme
 import com.droidcon.simplejokes.core.domain.datasource.PreferencesDataSource
-import jakarta.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class PreferencesDataSourceImpl @Inject constructor(
+class PreferencesDataSourceImpl(
     private val vault: Vault
 ) : PreferencesDataSource {
 

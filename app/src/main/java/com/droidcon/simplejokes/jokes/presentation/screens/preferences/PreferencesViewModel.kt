@@ -4,8 +4,6 @@ import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.droidcon.simplejokes.core.domain.datasource.PreferencesDataSource
-import dagger.hilt.android.lifecycle.HiltViewModel
-import jakarta.inject.Inject
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
@@ -22,8 +20,7 @@ sealed interface PreferencesIntent {
     data class UpdateTheme(val theme: String) : PreferencesIntent
 }
 
-@HiltViewModel
-class PreferencesViewModel @Inject constructor(
+class PreferencesViewModel(
     private val preferences: PreferencesDataSource
 ): ViewModel() {
 
