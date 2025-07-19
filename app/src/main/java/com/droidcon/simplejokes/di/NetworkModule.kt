@@ -15,7 +15,6 @@ import io.ktor.http.takeFrom
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import org.koin.dsl.module
-import timber.log.Timber
 
 
 val networkModule = module {
@@ -37,7 +36,7 @@ val networkModule = module {
             install(Logging) {
                 logger = object : Logger {
                     override fun log(message: String) {
-                        Timber.d(message)
+                        co.touchlab.kermit.Logger.d(message)
                     }
                 }
                 level = LogLevel.ALL

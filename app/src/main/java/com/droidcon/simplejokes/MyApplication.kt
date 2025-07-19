@@ -11,13 +11,11 @@ import com.droidcon.simplejokes.di.vaultModule
 import com.droidcon.simplejokes.di.viewModelsModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
-import timber.log.Timber
 
 class MyApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        Timber.Forest.plant(Timber.DebugTree())
 
         startKoin {
             androidContext(this@MyApplication)

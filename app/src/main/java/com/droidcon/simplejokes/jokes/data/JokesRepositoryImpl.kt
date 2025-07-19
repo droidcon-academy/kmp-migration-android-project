@@ -1,5 +1,6 @@
 package com.droidcon.simplejokes.jokes.data
 
+import co.touchlab.kermit.Logger
 import com.droidcon.simplejokes.jokes.data.database.JokesDao
 import com.droidcon.simplejokes.jokes.data.mappers.toEntity
 import com.droidcon.simplejokes.jokes.data.mappers.toJoke
@@ -8,7 +9,6 @@ import com.droidcon.simplejokes.jokes.domain.JokesRepository
 import com.droidcon.simplejokes.jokes.domain.model.Joke
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import timber.log.Timber
 
 /**
  * Repository implementation for jokes data with offline-first approach.
@@ -56,7 +56,7 @@ class JokesRepositoryImpl(
             val endTime = System.currentTimeMillis()
             val elapsedTime = endTime - startTime
 
-            Timber.Forest.tag("JokesRepository").d("Successfully updated database with ${remoteJokes.size} jokes in $elapsedTime ms")
+            Logger.withTag("JokesRepository").d("Successfully updated database with ${remoteJokes.size} jokes in $elapsedTime ms")
         }
     }
 

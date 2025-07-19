@@ -54,7 +54,7 @@ dependencies {
     implementation(libs.androidx.material3)
 
     // Timber
-    implementation(libs.timber)
+    implementation(libs.kermit)
 
     // koin
     implementation(libs.bundles.koin)
