@@ -1,6 +1,5 @@
 [versions]
 agp = "8.11.1"
-converterGson = "3.0.0"
 kotlin = "2.2.0"
 coreKtx = "1.16.0"
 junit = "4.13.2"
@@ -17,7 +16,6 @@ ktor = "3.2.2"
 datastore = "1.1.7"
 room = "2.7.2"
 kermit = "2.0.6"
-appcompat = "1.7.1"
 ksp = "2.2.0-2.0.2"
 
 [libraries]
@@ -66,9 +64,6 @@ androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "
 
 # Logging
 kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
-
-# Compatibility Library used for switching languages in android versions lower than 33
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

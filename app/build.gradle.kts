@@ -53,7 +53,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
-    // Timber
+    // Kermit
     implementation(libs.kermit)
 
     // koin
@@ -74,11 +74,6 @@ dependencies {
     // Network
     implementation(libs.bundles.ktor)
     implementation(libs.ktor.client.okhttp)
-
-    // Compatibility Library used for switching languages in android versions lower than 33
-    // https://github.com/sunildhiman90/SocialMediaFeed-JetpackCompose/tree/multi-language-support
-    // https://www.youtube.com/watch?v=VdwDawvfH98
-    implementation(libs.androidx.appcompat)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
