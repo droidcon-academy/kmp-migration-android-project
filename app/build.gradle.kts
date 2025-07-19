@@ -76,13 +76,8 @@ dependencies {
     implementation(libs.datastore)
 
     // Network
-    implementation(libs.retrofit)
-    implementation(libs.okhttp)
-    implementation(libs.logging.interceptor)
-
-    // allow for simple json conversion
-    implementation(libs.gson)
-    implementation(libs.converter.gson)
+    implementation(libs.bundles.ktor)
+    implementation(libs.ktor.client.okhttp)
 
     // Compatibility Library used for switching languages in android versions lower than 33
     // https://github.com/sunildhiman90/SocialMediaFeed-JetpackCompose/tree/multi-language-support
